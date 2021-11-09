@@ -1,9 +1,11 @@
-const AboutPage = () => {
-    return (
-        <div>
-            about page
-        </div>
-    )
-}
+import Layout from "../components/layout/Layout";
 
-export default AboutPage
+const AboutPage = () => {
+  return (
+    <Layout title="About DJ Events">
+      <div>about page</div>
+    </Layout>
+  );
+};
+
+export default AboutPage;
