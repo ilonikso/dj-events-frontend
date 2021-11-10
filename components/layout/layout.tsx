@@ -1,6 +1,8 @@
 import { FC } from "react";
 import Head from "next/head";
+import { useRouter } from "next/dist/client/router";
 
+import { Showcase } from "@/components/ui";
 import styles from "@/styles/Layout.module.css";
 
 import { Header, Footer } from "../layout";
@@ -11,6 +13,8 @@ export interface LayoutProps {
 }
 
 export const Layout: FC<LayoutProps> = ({ title, description, children }) => {
+  const router = useRouter();
+
   return (
     <div>
       <Head>
@@ -18,6 +22,9 @@ export const Layout: FC<LayoutProps> = ({ title, description, children }) => {
         <meta name="description" content={description} />
       </Head>
       <Header />
+
+      {router.pathname === "/" && <Showcase />}
+
       <div className={styles.container}>{children}</div>
       <Footer />
     </div>
