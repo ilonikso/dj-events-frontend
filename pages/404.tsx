@@ -1,8 +1,9 @@
-import { Layout } from "../components";
 import Link from "next/link";
 import { FaExclamationTriangle } from "react-icons/fa";
 
-import styles from "../styles/ErrorPage.module.css";
+import { Layout } from "@/components/layout";
+
+import styles from "@/styles/ErrorPage.module.css";
 
 const NotFoundPage = () => {
   return (

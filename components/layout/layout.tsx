@@ -1,8 +1,9 @@
 import { FC } from "react";
 import Head from "next/head";
 
-import styles from "../../styles/Layout.module.css";
-import { Footer, Header } from "../layout";
+import styles from "@/styles/Layout.module.css";
+
+import { Header, Footer } from "../layout";
 
 export interface LayoutProps {
   title?: string;
