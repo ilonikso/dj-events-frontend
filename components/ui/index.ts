@@ -1,1 +1,2 @@
-export * from './Showcase'
+export * from "./Showcase";
+export * from "./Event";
