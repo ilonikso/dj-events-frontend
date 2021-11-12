@@ -5,8 +5,9 @@ import { API_URL } from "@/config/index";
 import { EventItem } from "@/components/ui";
 
 import { Layout } from "@/components/layout";
+import { IEvent } from "types/event";
 
-const Home: NextPage<{ events: any }> = ({ events }) => {
+const Home: NextPage<{ events: IEvent[] }> = ({ events }) => {
   return (
     <Layout>
       <h1>Upcoming events</h1>
