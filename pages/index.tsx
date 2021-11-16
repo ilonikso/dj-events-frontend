@@ -29,10 +29,10 @@ const Home: NextPage<{ events: IEvent[] }> = ({ events }) => {
 export default Home;
 
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events?_sort=date:ASC&_limit=3`);
   const events = await res.json();
 
   return {
-    props: { events: events.events.slice(0, 3) },
+    props: { events },
   };
 }

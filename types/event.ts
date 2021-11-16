@@ -8,7 +8,7 @@ export interface IEvent {
   date: string;
   time: string;
   description: string;
-  image: string;
+  image: any;
 }
 
 export interface IEvents {
