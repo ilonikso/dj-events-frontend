@@ -3,3 +3,4 @@ export * from "./Event";
 export * from "./Search";
 export * from "./Modal";
 export * from "./ImageUpload";
+export * from "./Pagination";
