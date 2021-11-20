@@ -7,12 +7,15 @@ import Link from "next/link";
 import { Layout } from "@/components/layout";
 
 import styles from "@/styles/AuthForm.module.css";
+import AuthContext from "@/context/AuthContext";
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+
+  const { register, error } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +25,7 @@ const RegisterPage = () => {
       return;
     }
 
-    console.log({ username, email, password });
+    register({ username, email, password });
   };
 
   return (
@@ -70,7 +73,7 @@ const RegisterPage = () => {
             />
           </div>
 
-          <input type="submit" value="Login" className="btn" />
+          <input type="submit" value="Register" className="btn" />
         </form>
 
         <p>
