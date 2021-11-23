@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Form.module.css";
+import { toast } from "react-toastify";
 
-export const ImageUpload = ({ evtId, imageUploaded }) => {
+export const ImageUpload = ({ evtId, imageUploaded, token }) => {
   const [image, setImage] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -16,10 +17,15 @@ export const ImageUpload = ({ evtId, imageUploaded }) => {
     const res = await fetch(`${API_URL}/upload`, {
       method: "POST",
       body: formData,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     if (res.ok) {
       imageUploaded();
+    } else {
+      toast.error("Something went wrong");
     }
   };
 
